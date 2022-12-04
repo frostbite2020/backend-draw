@@ -4,7 +4,6 @@ var io = require("socket.io")(http, {
   cors: {
     origin: "https://sparkling-platypus-1d795a.netlify.app",
     methods: ["GET", "POST"],
-    allowedHeaders: ["my-custom-header"],
     credentials: true,
   },
 });
