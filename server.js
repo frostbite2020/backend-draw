@@ -1,6 +1,13 @@
 var app = require("express")();
 var http = require("http").createServer(app);
-var io = require("socket.io")(http);
+var io = require("socket.io")(http, {
+  cors: {
+    origin: "https://example.com",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true,
+  },
+});
 
 io.on("connection", (socket) => {
   console.log("User Online");
